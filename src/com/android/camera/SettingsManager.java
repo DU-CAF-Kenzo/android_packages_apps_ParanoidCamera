@@ -1287,6 +1287,8 @@ public class SettingsManager implements ListMenu.SettingsListener {
     private List<String> getSupportedIso(int cameraId) {
         Range<Integer> range = mCharacteristics.get(cameraId).get(CameraCharacteristics
                 .SENSOR_INFO_SENSITIVITY_RANGE);
+        if (range == null)
+            return null;
         int max = range.getUpper();
         int value = 50;
         List<String> supportedIso = new ArrayList<>();
