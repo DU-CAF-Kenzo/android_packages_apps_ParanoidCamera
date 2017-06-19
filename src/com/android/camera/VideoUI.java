@@ -1231,6 +1231,7 @@ public class VideoUI implements PieRenderer.PieListener,
         if (mZoomRenderer != null) {
             mZoomRenderer.setOrientation(orientation);
         }
+        mCameraControls.setOrientation(orientation, animation);
         RotateTextToast.setOrientation(orientation);
         mOrientation = orientation;
     }
